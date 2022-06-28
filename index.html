@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock paper scissors</title>
+
 </head>
 <body>
     <div id = 'header-container'>
@@ -12,9 +13,29 @@
 
     </div>
     <div id = 'main-container'>
-        <button class='selector' id = 'rock-button'>Rock</button>
-        <button class='selector' id = 'paper-button'>Paper</button>
-        <button class='selector' id = 'scissors-button'>Scissors</button>
+        <div id = 'game-battle-screen'>
+            <div class="weapon-choice" id = 'player'>
+                <div class = 'player-space'>Player
+                    <div id = 'weapon-player' class = 'weapon-box'></div>
+                    <div id = 'score-text-player'>0</div>
+                </div>
+            </div>
+            <div class='weapon-choice' id = 'computer'>
+                <div class= 'computer-space'>Computer
+                    <div id = 'weapon-computer' class= 'weapon-box'></div>
+                    <div id = 'score-text-computer'>0</div>
+                </div>
+            </div>
+        </div>
+        <div id = 'game-text-intro'>Welcome to the rock paper scissors game! First one to 5 points will win. Good luck!</div>
+        <div id = 'game-text-dialogue'>Round 1! Please choose between "Rock", "Paper" and "Scissors". </div>
+        <div id = 'game-text-result'></div>
+        <div id = 'weapon-button-space'>
+            <button class='selector' id = 'rock-button'>Rock</button>
+            <button class='selector' id = 'paper-button'>Paper</button>
+            <button class='selector' id = 'scissors-button'>Scissors</button>
+        </div>
+        
     </div>
     <script src="javascript.js"></script>
 </body>
