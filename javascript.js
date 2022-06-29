@@ -34,18 +34,18 @@ let computerScore = document.getElementById('score-text-computer');
         if ((playerVictory == 5)||(computerVictory == 5)) {
         break;
         }
-        } while ((playerVictory < 5)||(computerVictory < 5)) */
+        } while ((playerVictory < 5)||(computerVictory < 5)) 
 // Alert messages announcing winner of 5 rounds. Prompt for new game via page refresh
         if (playerVictory == 5) {
             console.log('Winner!');
-            /*
+            
             if(confirm('You are the winner of the rock paper scissors game! Play again? ')){}
             else window.location.reload();
-            */
+            
        } else if (computerVictory > playerVictory) {
             if(confirm('The computer is the winner of the rock paper scissors game! Play again? ')){}
             else window.location.reload();}; 
-
+*/
 
 function computerPlay() {
     const options = ['rock', 'paper', 'scissors'];
@@ -54,17 +54,30 @@ function computerPlay() {
 }
  
  function playRound(playerSelection, computerSelection) {
-    if (playerSelection === computerSelection) {
-            gameResult.textContent = "Player chose " + playerSelection + ". Computer chose " + computerSelection + ". Player also chooses " + playerSelection +  ". It's a draw!";
-    } else if ((playerSelection === 'paper' && computerSelection === 'rock')||(playerSelection === 'scissors' && computerSelection === 'paper')||(playerSelection === 'rock' && computerSelection === 'scissors')) {
-            gameResult.textContent = 'Player chose ' + playerSelection + '. Computer chose ' + computerSelection + '. You win! ' + playerSelection + ' beats ' + computerSelection + '!';
-            playerVictory++;
-
-            playerScore.textContent = playerVictory;  
+    if ((playerVictory == 5) && (playerVictory > computerVictory)) {
+        console.log('Winner!');
+    } else if ((computerVictory == 5) && (computerVictory > playerVictory)) {
+        console.log('Loser!');
     } else {
-            gameResult.textContent = 'Player chose ' + playerSelection + '. Computer chose ' + computerSelection + '. You lose! ' + computerSelection + ' beats ' + playerSelection  + '!';
-            computerVictory++;
-            computerScore.textContent = computerVictory;
+            if (playerSelection === computerSelection) {
+                gameResult.textContent = "Player chose " + playerSelection + ". Computer chose " + computerSelection + ". Player also chooses " + playerSelection +  ". It's a draw!";
+            } else if ((playerSelection === 'paper' && computerSelection === 'rock')||(playerSelection === 'scissors' && computerSelection === 'paper')||(playerSelection === 'rock' && computerSelection === 'scissors')) {
+                playerWin(playerSelection,computerSelection);
+            } else {
+                computerWin(playerSelection,computerSelection);
+            }
     }
         }
 
+
+function playerWin(playerSelection,computerSelection) {
+    gameResult.textContent = 'Player chose ' + playerSelection + '. Computer chose ' + computerSelection + '. You win! ' + playerSelection + ' beats ' + computerSelection + '!';
+    playerVictory++;
+    playerScore.textContent = playerVictory;  
+}
+
+function computerWin(playerSelection,computerSelection) {
+    gameResult.textContent = 'Player chose ' + playerSelection + '. Computer chose ' + computerSelection + '. You lose! ' + computerSelection + ' beats ' + playerSelection  + '!';
+    computerVictory++;
+    computerScore.textContent = computerVictory;
+}
