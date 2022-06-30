@@ -10,16 +10,21 @@ const scissorsSelection = document.getElementById('scissors-button');
 // Use of anoymous functions to call a function with parameters
 rockSelection.addEventListener('click', function() {
     playRound('rock', computerPlay())
+    gameRoundText(roundNumber)
+    roundNumber++;
 });
 paperSelection.addEventListener('click', function() {
     playRound('paper', computerPlay())
+    gameRoundText(roundNumber)
+    roundNumber++;
 });
 scissorsSelection.addEventListener('click', function() {
     playRound('scissors', computerPlay())
+    gameRoundText(roundNumber)
+    roundNumber++;
 });
 
 const roundText = document.getElementById('game-text-dialogue');
-const button = document.getElementsByClassName('selector');
 
 const gameResult = document.getElementById('game-text-result');
 const playerScore = document.getElementById('score-text-player');
@@ -68,4 +73,8 @@ function computerWin(playerSelection,computerSelection) {
                 document.getElementById('scissors-button').disabled = true;
         } else window.location.reload();
     }
+}
+
+function gameRoundText(roundNumber) {
+        roundText.textContent = 'Round ' + roundNumber.toString() + '! Please choose between "Rock", "Paper" and "Scissors".';
 }
