@@ -1,4 +1,4 @@
-let playerVictory = 1;
+let playerVictory = 0;
 let computerVictory = 0;
 let roundNumber = 1;
 
