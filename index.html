@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href="styles.css">
     <title>Rock paper scissors</title>
 
 </head>
@@ -14,28 +15,27 @@
     </div>
     <div id = 'main-container'>
         <div id = 'game-battle-screen'>
-            <div class="weapon-choice" id = 'player'>
-                <div class = 'player-space'>Player
-                    <div id = 'weapon-player' class = 'weapon-box'></div>
-                    <div id = 'score-text-player'>0</div>
-                </div>
+            <div class="weapon-space" id = 'player'>
+                <div class = 'player-space'>Player</div>
+                <div id = 'weapon-player' class = 'weapon-box'>?</div>
+                <div id = 'score-text-player'>0</div>
             </div>
-            <div class='weapon-choice' id = 'computer'>
-                <div class= 'computer-space'>Computer
-                    <div id = 'weapon-computer' class= 'weapon-box'></div>
-                    <div id = 'score-text-computer'>0</div>
-                </div>
+            <div>-</div>
+            <div class='weapon-space' id = 'computer'>
+                <div class= 'computer-space'>Computer</div>
+                <div id = 'weapon-computer' class= 'weapon-box'>?</div>
+                <div id = 'score-text-computer'>0</div>
             </div>
         </div>
         <div id = 'game-text-intro'>Welcome to the rock paper scissors game! First one to 5 points will win. Good luck!</div>
         <div id = 'game-text-dialogue'>Round 1! Please choose between "Rock", "Paper" and "Scissors". </div>
         <div id = 'game-text-result'></div>
-        <div id = 'weapon-button-space'>
-            <button class='selector' id = 'rock-button'>Rock</button>
-            <button class='selector' id = 'paper-button'>Paper</button>
-            <button class='selector' id = 'scissors-button'>Scissors</button>
+        <div class = 'weapon-button-space'>
+            <input type='image' id = 'rock-button' alt ='ROCK' src ='../rock-paper-scissors/icons/rock.png'>
+            <input type='image' id = 'paper-button' alt ='PAPER' src ='../rock-paper-scissors/icons/paper.png' >
+            <input type='image' id = 'scissors-button' alt = 'SCISSORS' src ='../rock-paper-scissors/icons/scissors.png'>
         </div>
-        
+       
     </div>
     <script src="javascript.js"></script>
 </body>
